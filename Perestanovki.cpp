@@ -61,8 +61,8 @@ int main (int argc, char *argv[])
 		
 		cout<<"POTOK2"<<endl;
 		f1.open(s1, ios_base::out);
-		f1<<str<<"\n";
-		f1<<itoa(fact(i), str, 10)<<"\n";
+		f1<<"Текущая строка: "<<str<<"\n";
+		f1<<"Количество возможных перестоновок: "<<itoa(fact(i), str, 10)<<"\n";
 		f1.close();
 	}
 
