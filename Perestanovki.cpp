@@ -20,7 +20,7 @@
 
 using namespace std;
 
-int fact(int N)
+DWORD fact(int N)
 {
     if (N == 0)
         return 1;
@@ -50,8 +50,8 @@ void foo (FILE *in)
 		
 		cout<<"POTOK1"<<endl;
 		f1.open(s1, ios_base::out);
-		f1<<str<<"\n";
-		f1<<itoa(fact(i), str, 10)<<"\n";
+		f1<<"Исходная строка: "<<str<<"\n";
+		f1<<"Количество возможных перестановок: "<<itoa(fact(i), str, 10)<<"\n\nВыполнил поток #1\n";
 		f1.close();
 	}
 }
@@ -79,8 +79,8 @@ void bar (FILE *in2)
 		
 		cout<<"POTOK2"<<endl;
 		f1.open(s1, ios_base::out);
-		f1<<str<<"\n";
-		f1<<itoa(fact(i), str, 10)<<"\n";
+		f1<<"Исходная строка: "<<str<<"\n";
+		f1<<"Количество возможных перестановок: "<<itoa(fact(i), str, 10)<<"\n\nВыполнил поток #2\n";
 		f1.close();
 	}
 }
@@ -96,8 +96,21 @@ int main (int argc, char *argv[])
 	string s1;
 	char *s,*s2;
 	
-	in = fopen("in.txt", "r");
-	in2 = fopen("in2.txt", "r");
+	in = fopen (argv[1],"r");
+	in2 = fopen (argv[2],"w");
+	
+	while(!feof(in))
+	{
+		s = fgets (str,sizeof(str),in);
+		fprintf(in2,s);
+	}
+	
+	fclose(in);
+	fclose(in2);
+	
+	
+	in = fopen (argv[1],"r");
+	in2 = fopen (argv[2],"r");
 
 	 
 	cout<<"LOADING....DONE"<<endl;
