@@ -46,6 +46,7 @@ void foo (char *s, int j)
 		f1<<"Текущая строка: "<<str<<"\n";
 		f1<<"Количество возможных перестоновок: "<<itoa(fact(i), str, 10)<<"\n";
 		f1.close();
+		return;
 }
 
 
@@ -67,6 +68,7 @@ void bar (char *s, int j)
 		f1<<"Текущая строка: "<<str<<"\n";
 		f1<<"Количество возможных перестоновок: "<<itoa(fact(i), str, 10)<<"\n";
 		f1.close();
+		return;
 }
 
 
@@ -78,18 +80,16 @@ int main (int argc, char *argv[])
 	cout<<"LOADING....DONE"<<endl;
 	
 	in = fopen("in.txt", "r");
-	in2 = fopen("in2.txt", "r");
-	fclose(in2);
-	f1.open(in2 , ios_base::); 
-	while (!feof(in))
-	{
-			s = fgets(str,sizeof(str),in);
-			f1 << s << "\n";
-			
-	}
+//	in2 = fopen("in2.txt", "r");
+//	fclose(in2);
+//	f1.open(in2 , ios_base::out); 
+//	while (!feof(in))
+//	{
+//			s = fgets(str,sizeof(str),in);
+//			f1 << s << "\n";
+//	}
 	 
 
-	ofstream f1;
 	char str[255],a[255];
 	int i=0,j=0;
 	char *s,*s2;
