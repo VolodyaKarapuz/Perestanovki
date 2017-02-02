@@ -29,20 +29,22 @@ DWORD fact(int N)
 }
 
 
-void p(string A, FILE *in)
+void p(string A, string s1)
 {
-    cout << A << endl;
+   ofstream f1;
+   f1.open(s1, ios_base::app);
+   f1<<A<<"\n";
+   f1.close();
 }
 
-void P(int k, string A, int N)
+void P(int k, string A, int N, string s1)
 {
-    if (k == N&&!my_set.count(A))
-        p(A);
+    if (k == N)
+        p(A, s1);
     for (int i = k; i < N; i++)
     {
         swap(A[k], A[i]);
-        P(k + 1, A, N);
-        my_set.insert(A);
+        P(k + 1, A, N, s1);
     }
 }
 
@@ -71,8 +73,15 @@ void foo (FILE *in)
 		f1.open(s1, ios_base::out);
 		f1<<"Исходная строка: "<<str<<"\n";
 		f1<<"Количество возможных перестановок: "<<itoa(fact(stroka.length()), str, 10)<<"\n\nВыполнил поток #1\n"<<"А теперь та самая переменная stroka: "<<stroka<<"\n\n";
-		stroka="";
 		f1.close();
+		
+   		sort(stroka.begin(), stroka.end());
+    	P(0, stroka, stroka.length(), s1);
+		
+		
+		
+		stroka="";
+		
 		
 	}
 }
@@ -104,8 +113,13 @@ void bar (FILE *in2)
 		f1.open(s1, ios_base::out);
 		f1<<"Исходная строка: "<<str<<"\n";
 		f1<<"Количество возможных перестановок: "<<itoa(fact(stroka.length()), str, 10)<<"\n\nВыполнил поток #2\n"<<"А теперь та самая переменная stroka: "<<stroka<<"\n\n";
-		stroka="";
+		
 		f1.close();
+		
+		sort(stroka.begin(), stroka.end());
+    	P(0, stroka, stroka.length(), s1);
+    	
+    	stroka="";
 	}
 }
 
