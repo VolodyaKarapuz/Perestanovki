@@ -29,30 +29,51 @@ DWORD fact(int N)
 }
 
 
+void p(string A, FILE *in)
+{
+    cout << A << endl;
+}
+
+void P(int k, string A, int N)
+{
+    if (k == N&&!my_set.count(A))
+        p(A);
+    for (int i = k; i < N; i++)
+    {
+        swap(A[k], A[i]);
+        P(k + 1, A, N);
+        my_set.insert(A);
+    }
+}
+
 void foo (FILE *in)
 {
 	ofstream f1;
-	char str[255],a[255];
+	
+	char a[255], str[255];
 	int i=0,j=0;
 	char *s;
-	string s1;
+	string s1,stroka="";
 	while(!feof(in))
 	{
-	
 		s = fgets (str,sizeof(str),in);
 		j++;
 		itoa(j,a,10);
 		s1=a;
 		s1=s1+".txt";
 		i=0;
-		while (s[i+1]!=NULL)
-			i++;
+		for (i=0; str[i]!=NULL; i++)
+		{
+			stroka+=str[i];
+		}
 		
 		cout<<"POTOK1"<<endl;
 		f1.open(s1, ios_base::out);
 		f1<<"Исходная строка: "<<str<<"\n";
-		f1<<"Количество возможных перестановок: "<<itoa(fact(i), str, 10)<<"\n\nВыполнил поток #1\n";
+		f1<<"Количество возможных перестановок: "<<itoa(fact(stroka.length()), str, 10)<<"\n\nВыполнил поток #1\n"<<"А теперь та самая переменная stroka: "<<stroka<<"\n\n";
+		stroka="";
 		f1.close();
+		
 	}
 }
 
@@ -60,27 +81,30 @@ void foo (FILE *in)
 
 void bar (FILE *in2)
 {
-		ofstream f1;
-	char str[255],a[255];
+	ofstream f1;
+	
+	char a[255], str[255];
 	int i=0,j=0;
 	char *s;
-	string s1;
+	string s1,stroka="";
 	while(!feof(in2))
 	{
-	
 		s = fgets (str,sizeof(str),in2);
 		j++;
 		itoa(j,a,10);
 		s1=a;
 		s1=s1+".txt";
 		i=0;
-		while (s[i+1]!=NULL)
-			i++;
+		for (i=0; str[i]!=NULL; i++)
+		{
+			stroka+=str[i];
+		}
 		
 		cout<<"POTOK2"<<endl;
 		f1.open(s1, ios_base::out);
 		f1<<"Исходная строка: "<<str<<"\n";
-		f1<<"Количество возможных перестановок: "<<itoa(fact(i), str, 10)<<"\n\nВыполнил поток #2\n";
+		f1<<"Количество возможных перестановок: "<<itoa(fact(stroka.length()), str, 10)<<"\n\nВыполнил поток #2\n"<<"А теперь та самая переменная stroka: "<<stroka<<"\n\n";
+		stroka="";
 		f1.close();
 	}
 }
