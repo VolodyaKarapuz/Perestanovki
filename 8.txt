@@ -1,56 +1,104 @@
-Исходная строка: sad
+Исходная строка: bvc
 
 Количество возможных перестановок: 24
 
 Выполнил поток #1
-А теперь та самая переменная stroka: sad
+
+Возможные перестановки: 
 
 
+bcv
 
-ads
+bvc
 
-asd
+cbv
 
-das
+cvb
 
-dsa
+vbc
 
-sad
+vcb
+b
+cv
+b
+vc
+bc
+v
+bcv
 
-sda
-a
-ds
-a
-sd
-ad
-s
-ads
+bv
+c
+bvc
 
-as
-d
-asd
+c
+bv
+c
+vb
+cb
+v
+cbv
 
-d
-as
-d
-sa
-da
-s
-das
+cv
+b
+cvb
 
-ds
-a
-dsa
+v
+bc
+v
+cb
+vb
+c
+vbc
 
-s
-ad
-s
-da
-sa
-d
-sad
+vc
+b
+vcb
 
-sd
-a
-sda
+
+bcv
+
+bvc
+
+cbv
+
+cvb
+
+vbc
+
+vcb
+b
+cv
+b
+vc
+bc
+v
+bcv
+
+bv
+c
+bvc
+
+c
+bv
+c
+vb
+cb
+v
+cbv
+
+cv
+b
+cvb
+
+v
+bc
+v
+cb
+vb
+c
+vbc
+
+vc
+b
+vcb
 

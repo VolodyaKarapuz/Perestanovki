@@ -1,56 +1,56 @@
-Исходная строка: das
+Исходная строка: kjh
 
 Количество возможных перестановок: 24
 
-Выполнил поток #1
-А теперь та самая переменная stroka: das
+Выполнил поток #2
+
+Возможные перестановки: 
 
 
+hjk
 
-ads
+hkj
 
-asd
+jhk
 
-das
+jkh
 
-dsa
+khj
 
-sad
+kjh
+h
+jk
+h
+kj
+hj
+k
+hjk
 
-sda
-a
-ds
-a
-sd
-ad
-s
-ads
+hk
+j
+hkj
 
-as
-d
-asd
+j
+hk
+j
+kh
+jh
+k
+jhk
 
-d
-as
-d
-sa
-da
-s
-das
+jk
+h
+jkh
 
-ds
-a
-dsa
+k
+hj
+k
+jh
+kh
+j
+khj
 
-s
-ad
-s
-da
-sa
-d
-sad
-
-sd
-a
-sda
+kj
+h
+kjh
 

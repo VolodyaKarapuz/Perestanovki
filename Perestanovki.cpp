@@ -72,7 +72,7 @@ void foo (FILE *in)
 		cout<<"POTOK1"<<endl;
 		f1.open(s1, ios_base::out);
 		f1<<"Исходная строка: "<<str<<"\n";
-		f1<<"Количество возможных перестановок: "<<itoa(fact(stroka.length()), str, 10)<<"\n\nВыполнил поток #1\n"<<"А теперь та самая переменная stroka: "<<stroka<<"\n\n";
+		f1<<"Количество возможных перестановок: "<<itoa(fact(stroka.length()), str, 10)<<"\n\nВыполнил поток #1\n"<<"\nВозможные перестановки: \n\n";
 		f1.close();
 		
    		sort(stroka.begin(), stroka.end());
@@ -112,7 +112,7 @@ void bar (FILE *in2)
 		cout<<"POTOK2"<<endl;
 		f1.open(s1, ios_base::out);
 		f1<<"Исходная строка: "<<str<<"\n";
-		f1<<"Количество возможных перестановок: "<<itoa(fact(stroka.length()), str, 10)<<"\n\nВыполнил поток #2\n"<<"А теперь та самая переменная stroka: "<<stroka<<"\n\n";
+		f1<<"Количество возможных перестановок: "<<itoa(fact(stroka.length()), str, 10)<<"\n\nВыполнил поток #2\n"<<"\nВозможные перестановки: \n\n";
 		
 		f1.close();
 		
@@ -158,7 +158,7 @@ int main (int argc, char *argv[])
 		t1.join();
 		t2.join();
 	
-
+	cout<<"SUCCESS!";
 	fclose(in);
 	fclose(in2);
 	

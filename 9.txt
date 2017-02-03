@@ -2,9 +2,9 @@
 
 Количество возможных перестановок: 24
 
-Выполнил поток #1
-А теперь та самая переменная stroka: asd
+Выполнил поток #2
 
+Возможные перестановки: 
 
 
 ads
@@ -18,6 +18,52 @@ dsa
 sad
 
 sda
+a
+ds
+a
+sd
+ad
+s
+ads
+
+as
+d
+asd
+
+d
+as
+d
+sa
+da
+s
+das
+
+ds
+a
+dsa
+
+s
+ad
+s
+da
+
+ads
+sa
+d
+
+asd
+
+das
+sad
+
+
+sad
+sd
+a
+
+sda
+sda
+
 a
 ds
 a
